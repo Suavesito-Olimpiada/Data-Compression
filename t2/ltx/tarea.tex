@@ -33,21 +33,94 @@
 
 \begin{document}
 
-\maketitle
+    \maketitle
 
-{\Problem} Tenemos que su código de Hoffman corresponde al generado por el siguiente árbol
-\\
-\begin{center}
-    \begin{tikzpicture}
-        \node[circle,draw]{$30$}
-        	child[missing]{}
-        	child{node[circle,draw]{40} 
-        		child{node[circle,draw] {20}} 
-        		child{node{}
-        			child[missing]{}
-        			child{node[circle,draw]{30}}}};
-    \end{tikzpicture}
-\end{center}
+    {\Problem} Tenemos que su código de Hoffman corresponde al generado por el siguiente árbol
+    \\
+    \begin{center}
+        \begin{tikzpicture}
+            \node[circle,draw]{$1.0$}
+                child {node[circle,draw]{$0.49$}
+                edge from parent
+                    node[left]{$0$}
+                }
+                child [missing]{}
+                child {node[circle,draw]{$0.51$}
+                    child {node[circle,draw]{$0.25$}
+                        edge from parent node[left]{$0$}
+                    }
+                    child [missing]{}
+                    child {node[circle,draw]{$0.26$}
+                        child {node[circle,draw]{$0.12$}
+                            edge from parent node[left]{$0$}
+                        }
+                        child [missing]{}
+                        child {node[circle,draw]{$0.14$}
+                            child {node[circle,draw]{$0.06$}
+                                child {node[circle,draw]{$0.03$}
+                                    edge from parent node[left]{$0$}
+                                }
+                                child {node[circle,draw]{$0.03$}
+                                    edge from parent node[right]{$1$}
+                                }
+                                edge from parent node[left]{$0$}
+                            }
+                            child [missing]{}
+                            child {node[circle,draw]{$0.08$}
+                                child {node[circle,draw]{$0.04$}
+                                    edge from parent node[left]{$0$}
+                                }
+                                child {node[circle,draw]{$0.04$}
+                                    edge from parent node[right]{$1$}
+                                }
+                                edge from parent node[right]{$1$}
+                            }
+                            edge from parent node[right]{$1$}
+                        }
+                        edge from parent node[right]{$1$}
+                    }
+                    edge from parent node[right]{$1$}
+                }
+                        
+        \end{tikzpicture}
+    \end{center}
 
+    de lo cual tenemos que la longitud esperada del código es $$L(X) = 2.05$$.
+    \\
+    \begin{center}
+        \begin{tikzpicture}
+            \node[circle,draw]{$1.0$}
+                child {node[circle,draw]{$0.26$}
+                    edge from parent node[right]{$0$}
+                }
+                child {node[circle,draw]{$0.26$}
+                    child {node[circle,draw]{$0.04$}
+                        edge from parent node[right]{$0$}
+                    }
+                    child {node[circle,draw]{$0.10$}
+                        child {node[circle,draw]{$0.03$}
+                            edge from parent node[right]{$0$}
+                        }
+                        child {node[circle,draw]{$0.03$}
+                            edge from parent node[right]{$1$}
+                        }
+                        child {node[circle,draw]{$0.04$}
+                            edge from parent node[right]{$2$}
+                        }
+                        edge from parent node[right]{$1$}
+                    }
+                    child {node[circle,draw]{$0.12$}
+                        edge from parent node[right]{$2$}
+                    }
+                    edge from parent node[right]{$1$}
+                }
+                child {node[circle,draw]{$0.49$}
+                    edge from parent node[right]{$2$}
+                }
+        \end{tikzpicture}
+    \end{center}
+
+
+    
 
 \end{document}
